@@ -1,0 +1,21 @@
+.card {
+    overflow: hidden;
+    /* はみ出した部分を隠す */
+    border-radius: 8px;
+    /* カードの角を丸くする */
+}
+
+.card img {
+    width: 100%;
+    /* 画像をカードの幅に合わせる */
+    height: auto;
+    /* 高さを自動調整 */
+    object-fit: cover;
+    /* アスペクト比を保ちながら画像をトリミング */
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
