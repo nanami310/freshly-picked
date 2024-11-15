@@ -3,6 +3,10 @@
     /* はみ出した部分を隠す */
     border-radius: 8px;
     /* カードの角を丸くする */
+    width: 100%;
+    /* カードの横幅を広げる */
+    
+    
 }
 
 .card img {
@@ -18,4 +22,65 @@ svg.w-5.h-5 {
     /*paginateメソッドの矢印の大きさ調整のために追加*/
     width: 30px;
     height: 30px;
+}
+
+.title{
+    font-weight:bold;
+    font-size: 25px;
+}
+
+.title2{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.text-end {
+    text-align: right;
+    /* 右寄せ */
+}
+
+.card-body {
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: space-between;
+    /* 左右に配置 */
+    align-items: center;
+    /* 垂直方向に中央揃え */
+}
+
+.card-title {
+    white-space: nowrap;
+    /* 改行を防ぐ */
+    overflow: hidden;
+    /* はみ出た部分を隠す */
+    text-overflow: ellipsis;
+    /* はみ出た部分に「...」を表示 */
+    max-width: 70%;
+    /* 最大幅を設定 */
+}
+
+
+.card-img-top {
+    width: 100%;
+    /* 画像をカードの幅に合わせる */
+    height: auto;
+    /* 高さを自動調整 */
+}
+
+
+.card-body img {
+    flex: 4;
+    /* 画像の比率を4にする */
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-md-4 {
+    padding-left: 5px;
+    /* 左右の余白を減らす */
+    padding-right: 5px;
+    /* 左右の余白を減らす */
 }

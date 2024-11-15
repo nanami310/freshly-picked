@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,11 +40,12 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-        $product->season = json_encode($request->season ?? []); // 季節をJSON形式で保存、デフォルトは空配列
+        $product->season = $request->season;
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
@@ -55,17 +57,30 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', '商品が登録されました。');
     }
 
-    public function edit($productId)
-    {
-        $product = Product::findOrFail($productId);
-        return view('products.edit', compact('product'));
-    }
-
     public function update(ProductRequest $request, $productId)
     {
         $product = Product::findOrFail($productId);
-        $product->update($request->validated());
-        return redirect()->route('products.index');
+
+    // リクエストのバリデーションを通過したデータで商品を更新
+    $product->name = $request->name;
+    $product->price = $request->price;
+    $product->description = $request->description;
+    $product->season = $request->season;
+
+    // 画像の更新処理
+    if ($request->hasFile('image')) {
+        // 古い画像を削除する処理
+        if ($product->image) {
+            Storage::disk('public')->delete($product->image);
+        }
+        $imagePath = $request->file('image')->store('images', 'public');
+        $product->image = $imagePath;
+    }
+
+    // 画像が選択されていない場合、既存の画像を保持
+    $product->save();
+
+    return redirect()->route('products.index')->with('success', '商品情報が更新されました。');
     }
 
     public function destroy($productId)
@@ -74,29 +89,4 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.index');
     }
-
-    private function validateRequest(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'price' => 'required|numeric|min:0|max:10000',
-            'season' => 'required|array',
-            'description' => 'required|string|max:120',
-            'image' => 'required|image|mimes:jpeg,png',
-        ]);
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required' => '商品名を入力してください。',
-            'price.required' => '値段を入力してください。',
-            'price.numeric' => '値段は数値で入力してください。',
-            'season.required' => '季節を選択してください。',
-            'description.required' => '商品説明を入力してください。',
-            'image.required' => '商品画像を登録してください。',
-        ];
-    }
-
-    
 }

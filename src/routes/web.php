@@ -26,9 +26,6 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 // 商品詳細表示
 Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show');
 
-// 商品編集画面表示
-Route::get('/products/{productId}/edit', [ProductController::class, 'edit'])->name('products.edit');
-
 // 商品更新処理
 Route::put('/products/{productId}', [ProductController::class, 'update'])->name('products.update');
 
@@ -37,3 +34,5 @@ Route::delete('/products/{productId}', [ProductController::class, 'destroy'])->n
 
 // 商品検索
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+
+Route::resource('products', ProductController::class);
