@@ -1,19 +1,27 @@
-.navbar-brand{
-    font-family:"Playball";
-    font-size: 30px;
-    color: #F5C800 !important;
-}
-
-body{
-    background-color: #f8f8f8;
-}
-
+/* Navbarのスタイル */
 .header {
     background-color: #ffffff !important;
-    /* 背景色 */
 }
 
 .navbar {
     background-color: transparent !important;
-    /* Navbarの背景色を透明に */
+    padding: 1rem 1rem;
+    /* パディングの調整 */
+}
+
+.navbar-brand {
+    font-family: "Playball";
+    font-size: 30px;
+    color: #F5C800 !important;
+}
+
+/* 全体の背景色 */
+body {
+    background-color: #f8f8f8;
+}
+
+/* コンテナのスタイル */
+.container {
+    margin-top: 20px;
+    /* 上部のマージン */
 }

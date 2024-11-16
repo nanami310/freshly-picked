@@ -1,21 +1,181 @@
-.card {
-    overflow: hidden;
-    /* はみ出した部分を隠す */
-    border-radius: 8px;
-    /* カードの角を丸くする */
-    width: 100%;
-    /* カードの横幅を広げる */
-    
-    
+/* 全体のスタイル */
+body {
+    background-color: #f8f8f8;
+    /* 背景色 */
 }
 
-.card img {
+/* コンテナのスタイル */
+.container-fluid {
+    display: flex;
+    /* フレックスボックスを使用 */
+    padding: 20px;
+    /* パディング */
+}
+
+/* 左側のカラムのスタイル */
+.left-column {
+    width: 300px;
+    /* 左側の幅を設定 */
+    margin-right: 20px;
+    /* 右側にスペースを */
+}
+
+/* 右側のカラムのスタイル */
+.right-column {
+    flex: 1;
+    /* 残りのスペースを占有 */
+}
+
+/* タイトルのスタイル */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* フォームのスタイル */
+.form-control {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+}
+
+/* ボタンのスタイル */
+.btn {
+    border-radius: 0.25rem;
+    /* ボタンの角を丸く */
+}
+
+/* カードのスタイル */
+.card {
+    border: 1px solid #e0e0e0;
+    /* カードの枠線 */
+    border-radius: 0.5rem;
+    /* カードの角を丸くする */
+    background-color: #fff;
+    /* 背景色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* シャドウ */
+    margin-bottom: 20px;
+    /* カードの下部マージン */
+}
+
+.card-body {
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: space-between;
+    /* 左右にスペースを分ける */
+    align-items: center;
+    /* 縦方向の中央揃え */
+}
+
+/* カード画像のスタイル */
+.card-img-top {
     width: 100%;
-    /* 画像をカードの幅に合わせる */
+    /* 幅を100%に */
     height: auto;
     /* 高さを自動調整 */
-    object-fit: cover;
-    /* アスペクト比を保ちながら画像をトリミング */
+}
+
+/* カードタイトルとテキストのスタイル */
+.card-title {
+    font-weight: bold;
+    /* タイトルを太字に */
+}
+
+.card-text {
+    color: #333;
+    /* テキストの色 */
+}
+
+/* カードを3列にするためのスタイル */
+.row {
+    display: flex;
+    /* フレックスボックスを使用 */
+    flex-wrap: wrap;
+    /* ラップさせる */
+}
+
+.col-md-4 {
+    flex: 0 0 33.33%;
+    /* 1行に3つのカードを表示 */
+    max-width: 33.33%;
+    /* 最大幅を33.33%に */
+    padding: 10px;
+    /* カード間のパディング */
+}
+
+/* スマートフォン用のスタイル */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        /* スマートフォンでは1列に */
+        max-width: 100%;
+        /* 最大幅を100%に */
+    }
+}
+
+/* マージン調整 */
+.mb-2 {
+    margin-bottom: 10px;
+    /* ボタン間のマージン */
+}
+
+/* 検索ボタンを四角で囲むスタイル */
+.input-group {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+    display: flex;
+    /* フレックスボックスを使用 */
+}
+
+/* 検索ボタンのスタイル */
+.input-group .btn {
+    flex: 1;
+    /* ボタンを横幅100%に */
+    border: none;
+    /* ボーダーを消す */
+    border-radius: 0;
+    /* 角を丸くしない */
+}
+
+/* 「＋商品を追加」ボタンを右寄せ */
+.text-end {
+    text-align: right;
+    /* 右寄せ */
+}
+
+
+/* ボタン間のマージン調整 */
+.mb-3 {
+    margin-bottom: 1rem;
+    /* マージンを調整 */
+}
+
+/* 並び替え情報のスタイル */
+.sort-info {
+    margin-bottom: 1rem;
+    /* マージンを調整 */
+}
+
+/* 横線のスタイル */
+.sort-separator {
+    border: none;
+    /* ボーダーなし */
+    border-top: 1px solid #ced4da;
+    /* 上部に線を引く */
+    margin: 0;
+    /* マージンをリセット */
+    height: 1px;
+    /* 高さを設定 */
 }
 
 svg.w-5.h-5 {
@@ -24,63 +184,53 @@ svg.w-5.h-5 {
     height: 30px;
 }
 
-.title{
-    font-weight:bold;
-    font-size: 25px;
-}
-
-.title2{
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.text-end {
-    text-align: right;
-    /* 右寄せ */
-}
-
-.card-body {
+.pagination {
     display: flex;
     /* フレックスボックスを使用 */
-    justify-content: space-between;
-    /* 左右に配置 */
-    align-items: center;
-    /* 垂直方向に中央揃え */
+    justify-content: center;
+    /* 中央揃え */
+    list-style: none;
+    /* リストスタイルを消す */
+    padding: 0;
+    /* パディングをリセット */
 }
 
-.card-title {
-    white-space: nowrap;
-    /* 改行を防ぐ */
-    overflow: hidden;
-    /* はみ出た部分を隠す */
-    text-overflow: ellipsis;
-    /* はみ出た部分に「...」を表示 */
-    max-width: 70%;
-    /* 最大幅を設定 */
+.pagination li {
+    margin: 0 5px;
+    /* 各要素の間にマージンを */
 }
 
-
-.card-img-top {
-    width: 100%;
-    /* 画像をカードの幅に合わせる */
-    height: auto;
-    /* 高さを自動調整 */
+.pagination li a {
+    display: inline-block;
+    /* インラインブロックにする */
+    padding: 5px 10px;
+    /* パディングを設定 */
+    border: 1px solid #ced4da;
+    /* ボーダーを設定 */
+    border-radius: 50%;
+    /* 丸くする */
+    text-decoration: none;
+    /* 下線を消す */
+    color: #333;
+    /* テキストの色 */
 }
 
-
-.card-body img {
-    flex: 4;
-    /* 画像の比率を4にする */
+.pagination li a:hover {
+    background-color: #e0e0e0;
+    /* ホバー時の背景色 */
 }
 
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.col-md-4 {
-    padding-left: 5px;
-    /* 左右の余白を減らす */
-    padding-right: 5px;
-    /* 左右の余白を減らす */
+/* PreviousとNextのスタイル */
+.pagination .prev,
+.pagination .next {
+    border-radius: 5px;
+    /* 丸くする */
+    padding: 5px 10px;
+    /* パディングを設定 */
+    text-decoration: none;
+    /* 下線を消す */
+    color: #333;
+    /* テキストの色 */
+    margin: 0 5px;
+    /* マージンを設定 */
 }

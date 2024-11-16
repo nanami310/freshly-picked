@@ -1,0 +1,131 @@
+/* ナビゲーションのスタイル */
+nav {
+    text-align: left;
+    /* テキストを左揃えに */
+    width: 100%;
+    /* 幅を100%に設定 */
+    align-self: flex-start;
+    /* ナビゲーションを左揃えにする */
+}
+
+.breadcrumb {
+    display: flex;
+    /* フレックスボックスを使用 */
+    align-items: center;
+    /* 中央に揃える */
+    padding: 0;
+    /* パディングをリセット */
+    margin: 0;
+    /* マージンをリセット */
+    list-style: none;
+    /* リストスタイルを削除 */
+}
+
+.breadcrumb-item {
+    margin-right: 10px;
+    /* アイテム間のスペース */
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: ">";
+    /* 矢印を追加 */
+    margin-left: 10px;
+    /* 矢印とテキストの間隔 */
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    /* 下線を削除 */
+    color: #007bff;
+    /* リンクの色 */
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    /* ホバー時に下線を追加 */
+}
+
+/* 全体のコンテナ */
+.container {
+    margin-top: 20px;
+    /* 上部のマージン */
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: center;
+    /* 上下にスペースを均等に配置 */
+    min-height: 100vh;
+    /* ビューポートの高さを100%に設定 */
+    flex-direction: column;
+    /* 縦に並べる */
+    align-items: center;/* 中央に揃える */
+}
+
+/* コンテンツのレイアウト */
+.content-layout {
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: space-between;
+    /* 左右のカラムの間隔を調整 */
+    width: 100%;
+    /* 幅を100%に設定 */
+    max-width: 1200px;
+    /* 最大幅を設定 */
+}
+
+/* 左側のカラム */
+.left-column {
+    flex: 1;
+    /* 左カラムの幅を設定 */
+    margin-right: 20px;
+    /* 右側のカラムとの間隔 */
+    background-color: blue;
+}
+
+.left-column img {
+    width:100%;
+    /* 幅を50%に設定して半分にする */
+    height: auto;
+    /* 高さを自動で調整 */
+}
+
+/* 右側のカラム */
+.right-column {
+    flex: 2;
+    /* 右カラムの幅を設定 */
+    background-color:blueviolet;
+}
+
+/* 商品説明セクション */
+.description-section {
+    width: 100%;
+    /* 幅を100%に設定 */
+    max-width: 1200px;
+    /* 最大幅を設定 */
+    background-color:brown;
+}
+
+/* ボタンセクション */
+.button-section {
+    display: flex;
+    /* フレックスボックスを使用 */
+    justify-content: space-between;
+    /* ボタンを左右に配置 */
+    align-items: center;
+    /* アイテムを中央に揃える */
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .content-layout {
+        flex-direction: column;
+        /* 縦に並べる */
+    }
+
+    .left-column,
+    .right-column {
+        margin-right: 0;
+        /* マージンをリセット */
+        margin-bottom: 20px;
+        /* 下部のマージンを追加 */
+    }
+}

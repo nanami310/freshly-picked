@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    /* フレックスボックスを使用 */
+    flex-direction: column;
+    /* 縦に並べる */
+    align-items: center;
+    /* 中央に揃える */
+    justify-content: center;
+    /* 垂直方向の中央揃え */
+    min-height: 100vh;
+    /* ビューポートの高さを100%に設定 */
+}
+
+.text-left {
+    text-align: left;
+    /* テキストを左揃えに */
+    width: 100%;
+    /* 幅を100%にして左揃えを適用 */
+}
+
+.text-center {
+    text-align: center;
+    /* テキストを中央揃えに */
+    width: 100%;
+    /* 幅を100%にして中央揃えを適用 */
+}
