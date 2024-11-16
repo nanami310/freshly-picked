@@ -1,7 +1,6 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-<link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- 新しいCSSファイルを追加 -->
 
 @section('content')
 
@@ -9,20 +8,20 @@
     <div class="left-column">
         <form method="GET" action="{{ route('products.index') }}">
             <div class="title">商品一覧</div>
-            <input type="text" name="search" class="form-control mb-2" placeholder="商品名で検索" value="{{ request('search') }}">
+            <input type="text" name="search" class="form-control mb-2 " placeholder="商品名で検索" value="{{ request('search') }}">
             <div class="input-group mb-2">
                 <button type="submit" class="btn btn-primary w-100">検索</button>
             </div>
             <div class="title2">価格順で表示</div>
-            <select name="sort" class="form-control mb-2" onchange="this.form.submit()">
+            <select name="sort" class="form-control2 mb-2" onchange="this.form.submit()">
                 <option value="">価格で並び替え</option>
                 <option value="asc" {{ request('sort') == 'asc' ? 'selected' : '' }}>低い順に表示</option>
                 <option value="desc" {{ request('sort') == 'desc' ? 'selected' : '' }}>高い順に表示</option>
             </select>
             @if (request('sort'))
                 <div class="sort-info mb-2">
-                    <a href="{{ route('products.index', ['search' => request('search'), 'sort' => null]) }}" class="btn btn-secondary">
-                        {{ request('sort') == 'asc' ? '低い順に表示' : '高い順に表示' }}<span style="border: 1px solid #000; border-radius: 50%; padding: 2px 5px; margin-left: 5px;">×</span>
+                    <a href="{{ route('products.index', ['search' => request('search'), 'sort' => null]) }}" class="btn2 btn-secondary">
+                        {{ request('sort') == 'asc' ? '低い順に表示' : '高い順に表示' }}<span style="border-radius: 50%">×</span>
                     </a>
                 </div>
             @endif
@@ -32,7 +31,7 @@
 
     <div class="right-column">
     <div class="text-end mb-3">
-        <a href="{{ route('products.create') }}" class="btn btn-success">＋商品を追加</a>
+        <a href="{{ route('products.create') }}" class="btn3 btn-success">＋商品を追加</a>
     </div>
 
     <div class="row">
@@ -62,5 +61,7 @@
     </ul>
 </div>
 </div>
+
+
 
 @endsection

@@ -25,3 +25,14 @@ body {
     margin-top: 20px;
     /* 上部のマージン */
 }
+
+/* 文字の下線を消す */
+.navbar a {
+    text-decoration: none;
+    /* 下線を消す */
+}
+
+.navbar a:hover {
+    text-decoration: none;
+    /* ホバー時も下線を消す */
+}

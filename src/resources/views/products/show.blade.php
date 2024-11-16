@@ -32,19 +32,19 @@
                 </div>
             <!-- 右側のカラム -->
                 <div class="right-column">
-                    <p>商品名: </p>
-                    <input type="text" name="name" value="{{ old('name', $product->name) }}" class="form-control">
+                    <p>商品名 </p>
+                    <input type="text" name="name" value="{{ old('name', $product->name) }}" class="form-control" placeholder="商品名を入力">
                     @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
-                    <p>値段: </p>
-                    <input type="number" name="price" value="{{ old('price', $product->price) }}" class="form-control">円
+                    <p>値段 </p>
+                    <input type="number" name="price" value="{{ old('price', $product->price) }}" class="form-control" placeholder="値段を入力">
                     @error('price')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
-                    <p>季節:</p>
+                    <p>季節</p>
                     <div>
                         @php
                             $seasons = $product->season; // ここはそのまま配列と仮定
@@ -64,16 +64,16 @@
             </div>
             <!-- 商品説明 -->
             <div class="description-section mt-3">
-                <p>商品説明: </p>
-                <textarea name="description" class="form-control">{{ old('description', $product->description) }}</textarea>
+                <p>商品説明 </p>
+                <textarea name="description" class="form-control2" placeholder="商品の説明を入力">{{ old('description', $product->description) }}</textarea>
                 @error('description')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
                 
                 <div class="button-section mt-3">
-                <button type="submit" class="btn btn-primary">変更を保存</button>
-                </form>
                 <a href="{{ route('products.index') }}" class="btn btn-secondary">戻る</a>
+                <button type="submit" class="btn2 btn-primary">変更を保存</button>
+                </form>
 
                 <!-- 削除ボタンの追加 -->
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-3" onsubmit="return confirm('本当に削除しますか？');">

@@ -6,6 +6,7 @@ nav {
     /* 幅を100%に設定 */
     align-self: flex-start;
     /* ナビゲーションを左揃えにする */
+    margin-bottom: 10px;
 }
 
 .breadcrumb {
@@ -47,14 +48,14 @@ nav {
 
 /* 全体のコンテナ */
 .container {
-    margin-top: 20px;
+    
     /* 上部のマージン */
     display: flex;
     /* フレックスボックスを使用 */
     justify-content: center;
     /* 上下にスペースを均等に配置 */
-    min-height: 100vh;
-    /* ビューポートの高さを100%に設定 */
+   
+   
     flex-direction: column;
     /* 縦に並べる */
     align-items: center;/* 中央に揃える */
@@ -76,9 +77,9 @@ nav {
 .left-column {
     flex: 1;
     /* 左カラムの幅を設定 */
-    margin-right: 20px;
+    margin-right: 30px;
     /* 右側のカラムとの間隔 */
-    background-color: blue;
+    
 }
 
 .left-column img {
@@ -90,9 +91,31 @@ nav {
 
 /* 右側のカラム */
 .right-column {
-    flex: 2;
+    flex: 1;
     /* 右カラムの幅を設定 */
-    background-color:blueviolet;
+    
+}
+
+p{
+    margin-top: 30px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+    padding: 15px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 100%;
+    /* 幅を100%に設定 */
+    /* 下部のマージンを追加 */
+}
+
+.text-danger{
+    color:red;
 }
 
 /* 商品説明セクション */
@@ -101,7 +124,19 @@ nav {
     /* 幅を100%に設定 */
     max-width: 1200px;
     /* 最大幅を設定 */
-    background-color:brown;
+}
+
+.form-control2 {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+    padding: 15px 15px 100px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 100%;
+    /* 幅を100%に設定 */
 }
 
 /* ボタンセクション */
@@ -112,6 +147,42 @@ nav {
     /* ボタンを左右に配置 */
     align-items: center;
     /* アイテムを中央に揃える */
+    margin-top: 30px;
+    /* 下部のマージンを追加 */
+}
+
+/* ボタンのスタイル */
+.btn {
+    border-radius: 0.25rem;
+    /* ボタンの角を丸く */
+    padding: 10px 20px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 200px;
+    /* 幅を100%に設定 */
+    background-color: #E0DFDE;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* シャドウ */
+    border:none;
+    text-align:center;
+    text-decoration: none;
+    /* 下線を消す */
+}
+
+.btn2 {
+    border-radius: 0.25rem;
+    /* ボタンの角を丸く */
+    padding: 10px 20px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 200px;
+    /* 幅を100%に設定 */
+    background-color: #F6C800;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* シャドウ */
+    border: none;
 }
 
 /* レスポンシブデザイン */

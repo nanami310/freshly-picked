@@ -5,22 +5,114 @@
     /* 縦に並べる */
     align-items: center;
     /* 中央に揃える */
-    justify-content: center;
-    /* 垂直方向の中央揃え */
-    min-height: 100vh;
-    /* ビューポートの高さを100%に設定 */
+    
+    
 }
 
 .text-left {
     text-align: left;
     /* テキストを左揃えに */
-    width: 100%;
-    /* 幅を100%にして左揃えを適用 */
+    width: 250%;
 }
 
 .text-center {
     text-align: center;
     /* テキストを中央揃えに */
+    margin-top: 30px;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.mb-3{
+    margin-top: 30px;
+}
+
+.text-danger {
+    background-color: red;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
+.text-danger2 {
+    color: red;
+    margin-top: 10px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+    padding: 10px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
     width: 100%;
-    /* 幅を100%にして中央揃えを適用 */
+    /* 幅を100%に設定 */
+    /* 下部のマージンを追加 */
+    margin-top: 10px;
+}
+
+.form-control2 {
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 100%;
+    /* 幅を100%に設定 */
+    /* 下部のマージンを追加 */
+    margin-top: 10px;
+}
+
+.form-control3 {
+    border: 1px solid #ced4da;
+    /* ボーダー */
+    border-radius: 0.25rem;
+    /* 角を丸く */
+    padding: 15px 15px 100px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 100%;
+    /* 幅を100%に設定 */
+    /* 下部のマージンを追加 */
+    margin-top: 10px;
+}
+
+/* ボタンのスタイル */
+.btn {
+    border-radius: 0.25rem;
+    /* ボタンの角を丸く */
+    padding: 10px 70px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 180px ;
+    /* 幅を100%に設定 */
+    background-color: #E0DFDE;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* シャドウ */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    /* 下線を消す */
+}
+
+.btn2 {
+    border-radius: 0.25rem;
+    /* ボタンの角を丸く */
+    padding: 10px 20px;
+    /* 内側のパディングを増やす */
+    font-size: 16px;
+    /* フォントサイズを大きくする */
+    width: 180px;
+    /* 幅を100%に設定 */
+    background-color: #F6C800;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* シャドウ */
+    border: none;
+    margin-left: 15px;
 }
