@@ -10,9 +10,13 @@
 7. envに以下の環境変数を追加
 
 ## 使用技術（実行環境）
+- PHP 8.0
+- Laravel 10.0
+- MySQL 8.0
 
 ## ER図
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/index.drawio.png)
 
 ## URL
-- 開発環境：http://localhost/
+- 開発環境：http://localhost/products
 - phpMyAdmin:：http://localhost:8080/
