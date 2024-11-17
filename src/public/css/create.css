@@ -82,6 +82,48 @@
     margin-top: 10px;
 }
 
+.checkbox-2 {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+}
+
+.checkbox-2 label {
+    display: flex;
+    align-items: center;
+    gap: 0 .5em;
+    position: relative;
+    cursor: pointer;
+    margin-right: 43px;
+}
+
+.checkbox-2 label::before {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    content: '';
+    background-color: #FFFFFF;
+}
+
+
+.checkbox-2 label:has(:checked)::after {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    transform: rotate(45deg);
+    width: 5px;
+    height: 10px;
+    border: solid #2589d0;
+    border-width: 0 3px 3px 0;
+    content: '';
+
+}
+
+.checkbox-2 input {
+    display: none;
+}
+
 /* ボタンのスタイル */
 .btn {
     border-radius: 0.25rem;

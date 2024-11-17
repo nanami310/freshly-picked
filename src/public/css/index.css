@@ -300,16 +300,25 @@ svg.w-5.h-5 {
 
 .pagination li a {
     display: inline-block;
-    /* インラインブロックにする */
-    padding: 5px 10px;
-    /* パディングを設定 */
-    border-radius: 50%;
-    /* 丸くする */
-    text-decoration: none;
-    /* 下線を消す */
-    color: #333;
-    /* テキストの色 */
-    background-color: #ffffff;
+        /* インラインブロックにする */
+        
+        
+        border-radius: 50%;
+        /* 丸くする */
+        text-decoration: none;
+        /* 下線を消す */
+        color: #333;
+        /* テキストの色 */
+        background-color: #ffffff;
+        /* 背景色 */
+        width: 40px;
+        /* 幅を固定 */
+        height: 40px;
+        /* 高さを固定 */
+        line-height: 40px;
+        /* 行の高さを合わせて中央揃え */
+        text-align: center;
+        /* テキストを中央揃え */
 }
 
 .pagination li a:hover {

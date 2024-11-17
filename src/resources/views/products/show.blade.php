@@ -25,10 +25,6 @@
                     @error('image')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
-    
-                    <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
                 </div>
             <!-- 右側のカラム -->
                 <div class="right-column">
@@ -39,7 +35,7 @@
                     @enderror
 
                     <p>値段 </p>
-                    <input type="number" name="price" value="{{ old('price', $product->price) }}" class="form-control" placeholder="値段を入力">
+                    <input type="text" name="price" value="{{ old('price', number_format($product->price, 0, '', '')) }}" class="form-control" placeholder="値段を入力">
                     @error('price')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -51,10 +47,11 @@
                             $availableSeasons = ['春', '夏', '秋', '冬'];
                         @endphp
                         @foreach ($availableSeasons as $season)
-                            <label>
-                                <input type="checkbox" name="season[]" value="{{ $season }}" {{ in_array($season, $seasons) ? 'checked' : '' }}>
-                                {{ $season }}
-                            </label>
+                        <fieldset class="checkbox-2">
+                            <label >
+                                <input type="checkbox" name="season[]" value="{{ $season }}"  {{ in_array($season, $seasons) ? 'checked' : '' }}>
+                                {{ $season }}</label>
+                                </fieldset>
                         @endforeach
                     </div>
                     @error('season')
@@ -79,7 +76,7 @@
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-3" onsubmit="return confirm('本当に削除しますか？');">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">削除</button>
+                    <button type="submit" class="btn3 btn-danger"><i class="fas fa-trash-alt"></i></button>
                 </form>
                 </div>
 
@@ -87,9 +84,10 @@
     </div>
 
 <script>
-    document.getElementById('imageInput').addEventListener('change', function() {
+    document.getElementById('image').addEventListener('change', function() {
         const fileName = this.files[0] ? this.files[0].name : '';
-        document.getElementById('fileName').textContent = fileName ? `選択されたファイル: ${fileName}` : '';
+        // 選択されたファイル名を表示する場合は以下の行を有効にしてください
+        document.getElementById('fileName').textContent = fileName || '';
     });
 </script>
 @endsection

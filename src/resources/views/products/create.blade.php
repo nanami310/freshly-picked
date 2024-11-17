@@ -9,14 +9,14 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="text-title">商品名 <span class="text-danger">必須</span></label><br>
-            <input type="text" name="name" class="form-control" placeholder="商品名を入力">
+            <input type="text" name="name" class="form-control" placeholder="商品名を入力" value="{{ old('name') }}">
             @error('name')
                 <div class="text-danger2">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="price" class="text-title">値段 <span class="text-danger">必須</span></label><br>
-            <input type="number" name="price" class="form-control" placeholder="値段を入力">
+            <input type="text" name="price" class="form-control" placeholder="値段を入力" value="{{ old('price') }}">
             @error('price')
                 <div class="text-danger2">{{ $message }}</div>
             @enderror
@@ -31,10 +31,12 @@
         <div class="mb-3">
             <label for="season" class="text-title">季節 <span class="text-danger">必須</span> <span style="font-size: smaller;" class="text-danger2">複数選択可</span></label><br>
             <div>
-                <label><input type="checkbox" name="season[]" value="春"> 春</label>
-                <label><input type="checkbox" name="season[]" value="夏"> 夏</label>
-                <label><input type="checkbox" name="season[]" value="秋"> 秋</label>
-                <label><input type="checkbox" name="season[]" value="冬"> 冬</label>
+                <fieldset class="checkbox-2">
+                <label ><input type="checkbox" name="season[]" value="春"{{old('season')=="春" ? 'checked' : '' }} > 春</label>
+                <label ><input type="checkbox" name="season[]" value="夏"{{old('season')=="夏" ? 'checked' : '' }} > 夏</label>
+                <label ><input type="checkbox" name="season[]" value="秋"{{old('season')=="秋" ? 'checked' : '' }} > 秋</label>
+                <label ><input type="checkbox" name="season[]" value="冬"{{old('season')=="冬" ? 'checked' : '' }} > 冬</label>
+                </fieldset>
             </div>
             @error('season')
                 <div class="text-danger2">{{ $message }}</div>
@@ -42,7 +44,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="text-title">商品説明 <span class="text-danger">必須</span></label><br>
-            <textarea name="description" class="form-control3" placeholder="商品の説明を入力"></textarea>
+            <textarea name="description" class="form-control3" placeholder="商品の説明を入力" value="{{ old('description') }}">{{ old('description') }}</textarea>
             @error('description')
                 <div class="text-danger2">{{ $message }}</div>
             @enderror

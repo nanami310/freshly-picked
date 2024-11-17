@@ -18,15 +18,8 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric|between:0,10000',
             'season' => 'required|array|min:1',
             'description' => 'required|string|max:120',
+            'image' => 'required|image|mimes:jpeg,png', // ここを常に追加
         ];
-
-        if ($this->is('products/create')) {
-            $rules['image'] = 'required|image|mimes:jpeg,png';
-        } elseif ($this->is('products/{id}')) { // showアクションのURLパターンに合わせる
-            $rules['image'] = 'nullable|image|mimes:jpeg,png';
-        }
-
-    return $rules;
     }
 
     public function messages()
