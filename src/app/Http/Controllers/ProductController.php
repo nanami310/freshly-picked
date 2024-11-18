@@ -11,7 +11,6 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        // 検索と並び替えのロジック
         $query = Product::query();
 
         if ($request->filled('search')) {
@@ -61,15 +60,12 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($productId);
 
-    // リクエストのバリデーションを通過したデータで商品を更新
     $product->name = $request->name;
     $product->price = $request->price;
     $product->description = $request->description;
     $product->season = $request->season;
 
-    // 画像の更新処理
     if ($request->hasFile('image')) {
-        // 古い画像を削除する処理
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
         }
@@ -77,7 +73,6 @@ class ProductController extends Controller
         $product->image = $imagePath;
     }
 
-    // 画像が選択されていない場合、既存の画像を保持
     $product->save();
 
     return redirect()->route('products.index')->with('success', '商品情報が更新されました。');

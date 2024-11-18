@@ -15,7 +15,7 @@
             </ol>
         </nav>
         <div class="content-layout">
-            <!-- 左側のカラム -->
+            <!-- 左側 -->
                 <div class="left-column">
                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid mb-3">
     
@@ -26,7 +26,7 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-            <!-- 右側のカラム -->
+            <!-- 右側 -->
                 <div class="right-column">
                     <p>商品名 </p>
                     <input type="text" name="name" value="{{ old('name', $product->name) }}" class="form-control" placeholder="商品名を入力">
@@ -72,7 +72,6 @@
                 <button type="submit" class="btn2 btn-primary">変更を保存</button>
                 </form>
 
-                <!-- 削除ボタンの追加 -->
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="mt-3" onsubmit="return confirm('本当に削除しますか？');">
                     @csrf
                     @method('DELETE')
@@ -86,7 +85,6 @@
 <script>
     document.getElementById('image').addEventListener('change', function() {
         const fileName = this.files[0] ? this.files[0].name : '';
-        // 選択されたファイル名を表示する場合は以下の行を有効にしてください
         document.getElementById('fileName').textContent = fileName || '';
     });
 </script>

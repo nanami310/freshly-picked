@@ -25,7 +25,7 @@
                     </a>
                 </div>
             @endif
-            <hr class="sort-separator"> <!-- 横線を追加 -->
+            <hr class="sort-separator">
         </form>
     </div>
 

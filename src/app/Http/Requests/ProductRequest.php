@@ -8,7 +8,7 @@ class ProductRequest extends FormRequest
 {
     public function authorize()
     {
-        return true; // 認可を許可
+        return true; 
     }
 
     public function rules()
@@ -18,7 +18,7 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric|between:0,10000',
             'season' => 'required|array|min:1',
             'description' => 'required|string|max:120',
-            'image' => 'required|image|mimes:jpeg,png', // ここを常に追加
+            'image' => 'required|image|mimes:jpeg,png', 
         ];
     }
 

@@ -12,9 +12,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price', 8, 2);
-            $table->json('season'); // デフォルト値を設定しない
+            $table->json('season'); 
             $table->text('description');
-            $table->string('image'); // 画像のパス
+            $table->string('image'); 
             $table->timestamps();
         });
     }

@@ -18,6 +18,6 @@ class Product extends Model
     ];
 
     protected $casts = [
-        'season' => 'array', // JSONを配列として扱う
+        'season' => 'array', 
     ];
 }
